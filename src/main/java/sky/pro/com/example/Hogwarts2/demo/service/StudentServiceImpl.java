@@ -20,7 +20,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student getStudent(long id) {
-        return null;
+        return studentMap.get(id);
     }
 
     @Override
@@ -30,6 +30,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void removeStudent(long id) {
+        studentMap.remove(id);
+        System.out.println(String.format("Student %s has been removed",id));
 
     }
 }
