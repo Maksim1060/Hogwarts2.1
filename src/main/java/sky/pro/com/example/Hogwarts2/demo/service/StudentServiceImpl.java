@@ -25,7 +25,10 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student updateStudent(long id, Student student) {
-        return null;
+        Student existingStudent = studentMap.get(id);
+        existingStudent.setName(student.getName());
+        existingStudent.setAge(student.getAge());
+        return existingStudent;
     }
 
     @Override
