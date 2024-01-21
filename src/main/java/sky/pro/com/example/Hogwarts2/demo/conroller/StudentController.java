@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.*;
 import sky.pro.com.example.Hogwarts2.demo.model.Student;
 import sky.pro.com.example.Hogwarts2.demo.service.StudentServiceImpl;
 
+import java.util.Collection;
+
 @RestController
 @RequestMapping("/students")
 public class StudentController {
@@ -29,5 +31,10 @@ public class StudentController {
 @DeleteMapping("/{id}")
     public void removeStudent(@PathVariable long id) {
          studentService.removeStudent(id);
+    }
+@GetMapping
+    public Collection<Student> getStudentsByAge(@RequestParam Integer age) {
+        return studentService.getStudentsByAge(age);
+
     }
 }
